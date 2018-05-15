@@ -1,0 +1,28 @@
+<main class="content">
+
+
+    <div class="controls-wrapper">
+            <div>
+              <label>Connect to:</label>
+              <input class="input" placeholder="192.168.???.???" type="text"
+                    [(ngModel)]="socketServerIpAdress">
+              <button class="button is-info" *ngIf="socketServerIpAdress != ''" (click)="initIoConnection()">Connect</button>
+            </div>
+            <div>
+              <label>Countdown</label>
+              <input class="input" placeholder="number of minutes" type="number"
+              [(ngModel)]="countdownMinutes">
+              <button class="button is-info" *ngIf="countdownMinutes > 0" (click)="sendCountdownTime()">Set time</button>
+              <button class="button is-info" *ngIf="countdownMinutes > 0" (click)="startCountdown()">Start</button>
+              <button class="button is-info" *ngIf="countdownMinutes > 0" (click)="pauseCountdown()">Pause</button>
+              <button class="button is-info" (click)="resetCountdown()">Reset</button>
+            </div>
+            <div>
+              <label>Messages</label>
+              <input class="input" placeholder="Send messages to the room" type="text"
+                     [(ngModel)]="textMessage">
+              <button class="button is-info" *ngIf="textMessage != ''" (click)="sendMessageToRoom()">Send</button>
+            </div>
+    </div>
+
+</main>
